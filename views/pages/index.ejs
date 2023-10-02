@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+
+    
+</head>
+<body>
+    <div class="container mt-5">
+        <form action="/ticket_insert" method="POST">
+            <div class="mb-3">
+                <label for="Boarding_Bus_Stop" class="form-label">乗車バス停</label>
+                <select class="form-select" id="Boarding_Bus_Stop" name="Boarding_Bus_Stop">
+                    <option value="Zenkoji">Zenkoji</option>
+                    <option value="Nagano station">Nagano station</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="Getoff_Bus_Stop" class="form-label">降車バス停</label>
+                <select class="form-select" id="Getoff_Bus_Stop" name="Getoff_Bus_Stop">
+                    <option value="Zenkoji">Zenkoji</option>
+                    <option value="Nagano station">Nagano station</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="adults" class="form-label">利用者数：大人</label>
+                <select class="form-select" id="adults" name="adults">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="child" class="form-label">子供</label>
+                <select class="form-select" id="child" name="child">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="Purpose" class="form-label">利用目的</label>
+                <select class="form-select" id="Purpose" name="Purpose">
+                    <option value="Visit">Visit</option>
+                    <option value="Work">Work</option>
+                    <option value="Study">Study</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">おりる</button>
+        </form>
+    </div>
+</body>
+</html>
