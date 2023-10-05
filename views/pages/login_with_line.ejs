@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LINE Messenger Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 40px;
+        }
+
+        h1 {
+            color: #0066cc;
+        }
+
+        .user-details {
+            /* Styling for user details */
+        }
+
+        .user-picture {
+            /* Styling for user picture */
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Function to generate a random state value
+        function generateRandomState(length) {
+            let state = '';
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            const charactersLength = characters.length;
+
+            for (let i = 0; i < length; i++) {
+                state += characters.charAt(Math.floor(Math.random() * charactersLength));
+            }
+
+            return state;
+        }
+
+        // Function to initiate the LINE login process
+        function loginWithLINE() {
+            const channelId = '2000133795';  
+            const redirectUri = encodeURIComponent('http://localhost:3001/line/line2');
+            const state = generateRandomState(10);
+
+            const url = `https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=${channelId}&redirect_uri=${redirectUri}&scope=profile%20openid&state=${state}`;
+
+            // Redirect the user to the LINE authorization URL
+            window.location.href = url;
+        }
+
+        // Check if the URL contains the 'code' query parameter
+        if (window.location.search.includes('?code=')) {
+            // Retrieve the authorization code from the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const authorizationCode = urlParams.get('code');
+
+            // Rest of the code for token exchange and user profile retrieval would go here
+            // ...
+
+        } else {
+            // Display a login button if 'code' is not found in the URL
+            const h1 = document.createElement('h1');
+            h1.textContent = 'LINE Messenger Login';
+
+            const loginButton = document.createElement('button');
+            loginButton.textContent = 'Login with LINE';
+            loginButton.addEventListener('click', loginWithLINE);
+
+            document.body.appendChild(h1);
+            document.body.appendChild(loginButton);
+        }
+    </script>
+</body>
+</html>
+

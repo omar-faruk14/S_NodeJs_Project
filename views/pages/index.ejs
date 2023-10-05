@@ -1,62 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- Include Bootstrap CSS -->
-    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
-
-    
+  <title>Sign Up Form</title>
 </head>
 <body>
-    <div class="container mt-5">
-        <form action="/ticket_insert" method="POST">
-            <div class="mb-3">
-                <label for="Boarding_Bus_Stop" class="form-label">乗車バス停</label>
-                <select class="form-select" id="Boarding_Bus_Stop" name="Boarding_Bus_Stop">
-                    <option value="Zenkoji">Zenkoji</option>
-                    <option value="Nagano station">Nagano station</option>
-                </select>
-            </div>
 
-            <div class="mb-3">
-                <label for="Getoff_Bus_Stop" class="form-label">降車バス停</label>
-                <select class="form-select" id="Getoff_Bus_Stop" name="Getoff_Bus_Stop">
-                    <option value="Zenkoji">Zenkoji</option>
-                    <option value="Nagano station">Nagano station</option>
-                </select>
-            </div>
+<h1>Sign Up</h1>
 
-            <div class="mb-3">
-                <label for="adults" class="form-label">利用者数：大人</label>
-                <select class="form-select" id="adults" name="adults">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                </select>
-            </div>
+<form action="/signup" method="post">
+  <label for="User_ID">User ID:</label><br>
+  <input type="text" id="User_ID" name="User_ID"><br>
+  
+  <label for="Display_Name">Display Name:</label><br>
+  <input type="text" id="Display_Name" name="Display_Name"><br>
+  
+  <label for="Age">Age:</label><br>
+  <input type="text" id="Age" name="Age"><br>
+  
+  <label for="Gender">Gender:</label><br>
+  <input type="text" id="Gender" name="Gender"><br>
+  <label for="Occupation">Occupation:</label><br>
+  <input type="text" id="Occupation" name="Occupation"><br>
+  
+  <label for="Usually_Bus_Use">Usually Bus Use:</label><br>
+  <input type="text" id="Usually_Bus_Use" name="Usually_Bus_Use"><br><br>
+  
+  <input type="submit" value="Submit">
+</form>
 
-            <div class="mb-3">
-                <label for="child" class="form-label">子供</label>
-                <select class="form-select" id="child" name="child">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                </select>
-            </div>
-
-            <div class="mb-3">
-                <label for="Purpose" class="form-label">利用目的</label>
-                <select class="form-select" id="Purpose" name="Purpose">
-                    <option value="Visit">Visit</option>
-                    <option value="Work">Work</option>
-                    <option value="Study">Study</option>
-                </select>
-            </div>
-
-            <button type="submit" class="btn btn-primary">おりる</button>
-        </form>
-    </div>
 </body>
 </html>
