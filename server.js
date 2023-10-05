@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express=require('express');
 const mysql = require('mysql');
+const path=require('path');
 
 const db=require('./db');
 const bodyParser = require('body-parser');
@@ -26,6 +27,8 @@ const app=express();
 // Serve static files from the root-level 'node_modules' folder
 //app.use(express.static('node_modules'));
 app.use(express.static('public'));
+app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')));
+app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')))
 
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -38,26 +41,6 @@ app.use('/',Boarding_Router);
 app.use('/line',Line_Route);
 
 
-
-
-//*****************************Line path For line */
-// app.get('/line', (req, res) => {
-//   res.render('pages/line_test');
-// });
-
-// app.get('/line3', (req, res) => {
-//   res.render('pages/login_with_line');
-// });
-
-
-// Define a route to handle LINE Messenger login
-// app.get('/line2',line_login_redirect );
-
-// app.get("/line_home", (req, res) => {
-//   res.render("pages/index")
-// });
-
-// app.post('/signup', line_signup);
 
 //set view engine
 app.set('view engine', 'ejs');

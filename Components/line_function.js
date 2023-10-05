@@ -42,7 +42,7 @@ const line_login_redirect= (req, res) => {
             const user_id = user_profile.userId;
   
             // Render the EJS view with user details
-            res.render('pages/line_profile_2', {
+            res.render('pages/index', {
               name: user_name,
               picture: user_picture,
               id: user_id,

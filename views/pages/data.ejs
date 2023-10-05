@@ -2,50 +2,36 @@
 <html>
 <head>
   <title>Data Display</title>
-  <style>
-    table {
-      border-collapse: collapse;
-      width: 80%;
-      margin: 20px auto;
-    }
-
-    table, th, td {
-      border: 1px solid black;
-    }
-
-    th, td {
-      padding: 8px;
-      text-align: left;
-    }
-  </style>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
 </head>
 <body>
-  <h1>Data from Database</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Getoff</th>
-        <th>Boarding</th>
-        <th>Adults</th>
-        <th>Childs</th>
-        <th>Purpose</th>
-        <th>TimeStamp</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% data.forEach((item) => { %>
+  <div class="container">
+    <h1>Data from Database</h1>
+    <table class="table">
+      <thead>
         <tr>
-          <td><%= item.Getoff %></td>
-          <td><%= item.Bording %></td>
-          <td><%= item.Adults %></td>
-          <td><%= item.Childs %></td>
-          <td><%= item.Purpose %></td>
-          <td><%= item.TimeStamp %></td>
+          <th>Getoff</th>
+          <th>Boarding</th>
+          <th>Adults</th>
+          <th>Childs</th>
+          <th>Purpose</th>
+          <th>TimeStamp</th>
         </tr>
-      <% }); %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% data.forEach((item) => { %>
+          <tr>
+            <td><%= item.Getoff %></td>
+            <td><%= item.Bording %></td>
+            <td><%= item.Adults %></td>
+            <td><%= item.Childs %></td>
+            <td><%= item.Purpose %></td>
+            <td><%= item.TimeStamp %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+  <script src="/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
