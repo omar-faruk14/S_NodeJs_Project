@@ -7,11 +7,12 @@
         <meta name="author" content />
         <title>富士見町</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <link rel="stylesheet" href="/css/bootstrap.min.css"/>
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="/css/styles.css" rel="stylesheet" />
     </head>
     <body class="d-flex flex-column" style="background-color: lightblue">
         <main class="flex-shrink-0">
@@ -52,8 +53,10 @@
                                 <h1 align="center">Fujimi Bus Service</h1>
                                 <form id="optionForm" action="/ticket_insert" method="POST">
                                   <div class="form-group">
+                                    <label for="User_ID" class="form-label">User_ID</label>
+                                    <input id="User_ID" name="User_ID" class="form-control" value="<%= User_ID %>" type="text" />
                                     <label for="Boarding Bus Stop" >乗車バス停</label>
-                                    <select id="Boarding_Bus_Stop" name="Boarding_Bus_Stop">
+                                    <select id="Boarding_Bus_Stop" name="Boarding_Bus_Stop" class="form-select">
                                     <option value="Zenkoji">Zenkoji</option>
                                     <option value="Nagano station">Nagano station</option>
                                     <option value="FujimiChu">FujimiChu</option>
@@ -61,8 +64,8 @@
                               
                                     </select>
                                       
-                                    <label for="Getoff Bus Stop">降車バス停</label>
-                                    <select id="Getoff_Bus_Stop" name="Getoff_Bus_Stop">
+                                    <label for="Getoff Bus Stop" class="form-label">降車バス停</label>
+                                    <select id="Getoff_Bus_Stop" name="Getoff_Bus_Stop" class="form-select">
                                     <option value="Zenkoji">Zenkoji</option>
                                     <option value="Nagano station">Nagano station</option>
                                     <option value="FujimiChu">FujimiChu</option>
@@ -71,40 +74,41 @@
                                     </select>
                                   
                                   
-                                    <label for="adults">利用者数：大人</label>
-                                    <select id="adults" name="adults">
+                                    <label for="adults" class="form-label">利用者数：大人</label>
+                                    <select id="adults" name="adults" class="form-select">
                                     <option value="1">1人</option>
                                     <option value="2">2人</option>
                                     <option value="3">3人</option>
                                     
                                     </select>
                             
-                                    <label for="child">子供</label>
-                                    <select id="child" name="child">
+                                    <label for="child" class="form-label">子供</label>
+                                    <select id="child" name="child" class="form-select">
                                     <option value="1">1人</option>
                                     <option value="2">2人</option>
                                     <option value="3">3人</option>
                                     </select>
                                   
-                                    <label for="Purpose">利用目的</label>
-                                    <select id="Purpose" name="Purpose">
+                                    <label for="Purpose" class="form-label">利用目的</label>
+                                    <select id="Purpose" name="Purpose" class="form-select">
                                     <option value="Visit">Visit</option>
                                     <option value="Work">Work</option>
                                     <option value="Study">Study</option>
                                     </select>
                             </div>
-                                    <button type="submit">おりる</button>
+                                    <button type="submit" class="btn btn-primary text-center">おりる</button>
                               
                                   </form>
                             </div>
 
                             <p align="center" style="color: red;">降りる際にこのボタンを押して、表示される画面を運転手さんに提示してください</p>
-                          </main>
+                        
                           </div>
                           </div>
                           </div>
               </div>
             </section>
+            </main>
 
        <!-- Footer-->
        <footer class="bg-dark py-4 mt-auto">
@@ -124,6 +128,6 @@
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+    <script src="/js/scripts.js"></script>
 </body>
 </html>

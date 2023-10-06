@@ -12,7 +12,6 @@ const {
 }=require('./Models/ticket_data');
 
 //for Line Data from models
-
 const {
   line_signup,
 } =require('./Models/line_data');
@@ -40,6 +39,9 @@ app.listen(process.env.PORT,()=>{
 app.use('/',Boarding_Router);
 app.use('/line',Line_Route);
 
+app.get("/driver_login", (req, res) => {
+  res.render("pages/driver_login");
+});
 
 
 //set view engine
