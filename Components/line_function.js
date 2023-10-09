@@ -42,12 +42,9 @@ const line_login_redirect= (req, res) => {
             const user_id = user_profile.userId;
   
             // Render the EJS view with user details
-            res.render('pages/index', {
-              name: user_name,
-              picture: user_picture,
-              id: user_id,
-            });
-          })
+            res.redirect(`/Line_Check?user_id=${user_id}&user_name=${user_name}`);
+    })
+
           .catch((error) => {
             console.error('Failed to retrieve user data.');
             res.status(500).send('Failed to retrieve user data.');
