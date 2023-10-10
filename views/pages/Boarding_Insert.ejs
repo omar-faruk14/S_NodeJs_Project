@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content />
         <meta name="author" content />
-        <title>富士見町</title>
+        <title>乗降ログ記録サービス</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
         <!-- Bootstrap icons-->
@@ -19,13 +19,11 @@
             <!-- Navigation-->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container px-5">
-                    <a class="navbar-brand" href="index.html">富士見町</a>
+                    <a class="navbar-brand" href="/line/line4">乗降ログ記録サービス</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Bus Survey</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/line/line4">Home</a></li>
                             
                         </ul>
                     </div>
@@ -50,10 +48,10 @@
                               <!-- Servey form-->
                               
                               <div class="container_1">
-                                <h1 align="center">Fujimi Bus Service</h1>
+                                <h1 align="center">乗降ログ記録サービス</h1>
                                 <form id="optionForm" action="/ticket_insert" method="POST">
                                   <div class="form-group">
-                                    <label for="User_ID" class="form-label">User_ID</label>
+                                    <label for="User_ID" class="form-label">ユーザーID</label>
                                     <input id="User_ID" name="User_ID" class="form-control" value="<%= User_ID %>" type="text" readonly style="background-color: #ccc; border: 1px solid #ccc; color: #000;" />
                                     <label for="Boarding Bus Stop" >乗車バス停</label>
                                     <select id="Boarding_Bus_Stop" name="Boarding_Bus_Stop" class="form-select">

@@ -1,36 +1,3 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-  <title>Sign Up Form</title>
-</head>
-<body>
-
-<h1>Sign Up</h1>
-
-<form action="/line/signup" method="post">
-  <label for="User_ID">User ID:</label><br>
-  <input type="text" value="<%= id %>" id="User_ID" name="User_ID"><br>
-  
-  <label for="Display_Name">Display Name:</label><br>
-  <input type="text" value="<%= name %>" id="Display_Name" name="Display_Name"><br>
-  
-  <label for="Age">Age:</label><br>
-  <input type="number" id="Age" name="Age"><br>
-  
-  <label for="Gender">Gender:</label><br>
-  <input type="text" id="Gender" name="Gender"><br>
-  <label for="Occupation">Occupation:</label><br>
-  <input type="text" id="Occupation" name="Occupation"><br>
-  
-  <label for="Usually_Bus_Use">Usually Bus Use:</label><br>
-  <input type="text" id="Usually_Bus_Use" name="Usually_Bus_Use"><br><br>
-  
-  <input type="submit" value="Submit">
-</form>
-
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -38,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content />
         <meta name="author" content />
-        <title>富士見町</title>
+        <title>乗降ログ記録サービス</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
         <!-- Bootstrap icons-->
@@ -52,13 +19,11 @@
             <!-- Navigation-->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container px-5">
-                    <a class="navbar-brand" href="index.html">富士見町</a>
+                    <a class="navbar-brand" href="/line/line4">乗降ログ記録サービス</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Bus Survey</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/line/line4">Home</a></li>
                             
                         </ul>
                     </div>
@@ -84,18 +49,21 @@
 
                               <div class="card">
                                 <div class="card-body">
-                                    <h1 class="card-title text-center">Sign Up</h1>
+                                    <h1 class="card-title text-center">サインアップ</h1>
                                     <form action="/line/signup" method="post">
                                         <div class="mb-3">
-                                            <label for="User_ID" class="form-label">User ID</label>
+                                            <label for="User_ID" class="form-label">ユーザーID</label>
                                             <input type="text" value="<%= id %>" id="User_ID" name="User_ID" class="form-control" readonly style="background-color: #ccc; border: 1px solid #ccc; color: #000;" />
                                         </div>
                                         <div class="mb-3">
-                                            <label for="Display_Name" class="form-label">Display Name</label>
+                                            <label for="Display_Name" class="form-label">名前</label>
                                             <input type="text" value="<%= name %>" id="Display_Name" name="Display_Name" class="form-control" />
                                         </div>
+
+                                    
+
                                         <div class="mb-3">
-                                            <label for="Age" class="form-label">Age</label>
+                                            <label for="Age" class="form-label">年齢</label>
                                             <input type="number" id="Age" name="Age" class="form-control" />
                                         </div>                                         
                                                  <label for="Gender" class="form-label">性別</label>
@@ -108,11 +76,17 @@
                                     </select>
             
                                         <div class="mb-3">
-                                            <label for="Occupation" class="form-label">Occupation</label>
+                                            <label for="Occupation" class="form-label">職業/学年</label>
                                             <input type="text" id="Occupation" name="Occupation" class="form-control" />
                                         </div>
+
                                         <div class="mb-3">
-                                            <label for="Usually_Bus_Use" class="form-label">Usually Bus Use</label>
+                                            <label for="District_Name" class="form-label">地区</label>
+                                            <input type="text" id="District_Name" name="District_Name" class="form-control" />
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="Usually_Bus_Use" class="form-label">おもに利用するバス停</label>
                                             <input type="text" id="Usually_Bus_Use" name="Usually_Bus_Use" class="form-control" />
                                         </div>
                                         <div class="text-center">

@@ -1,4 +1,7 @@
 const axios = require('axios');
+
+
+//For Line Login Code
 const line_login_redirect= (req, res) => {
     const channelId = '2000133795'; // Replace with your actual channel ID
     const clientSecret = '8b48b99c6e4e7aa063cdeca7097c4c7d'; // Replace with your actual channel secret
@@ -42,7 +45,7 @@ const line_login_redirect= (req, res) => {
             const user_id = user_profile.userId;
   
             // Render the EJS view with user details
-            res.redirect(`/Line_Check?user_id=${user_id}&user_name=${user_name}`);
+            res.redirect(`/line/Line_Check?user_id=${user_id}&user_name=${user_name}`);
     })
 
           .catch((error) => {
@@ -56,6 +59,34 @@ const line_login_redirect= (req, res) => {
       });
   };
 
+
+  function generateRandomState(length) {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    let state = '';
+  
+    for (let i = 0; i < length; i++) {
+      state += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+  
+    return state;
+  }
+
+  const line_login_direct_outside= (req, res) => {
+    // Generate the LINE login URL and redirect the user to it
+    const channelId = '2000133795';  // Replace with your LINE channel ID
+    const redirectUri = encodeURIComponent('http://localhost:3001/line/line2');
+    const state = generateRandomState(10);  // You need to implement this function
+  
+    const url = `https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=${channelId}&redirect_uri=${redirectUri}&scope=profile%20openid&state=${state}`;
+  
+    // Redirect the user to the LINE authorization URL
+    res.redirect(url);
+  }
+
+
+
   module.exports={
     line_login_redirect,
+    line_login_direct_outside,
   };
