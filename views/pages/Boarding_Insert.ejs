@@ -55,7 +55,12 @@
                                     <input id="User_ID" name="User_ID" class="form-control" value="<%= User_ID %>" type="text" readonly style="background-color: #ccc; border: 1px solid #ccc; color: #000;" />
                                     <label for="Boarding Bus Stop" >乗車バス停</label>
                                     <select id="Boarding_Bus_Stop" name="Boarding_Bus_Stop" class="form-select">
-                                    <option value="Zenkoji">Zenkoji</option>
+                                        <% if (typeof Boarding !== 'undefined' && Boarding) { %>
+                                            <option value="<%= Boarding %>"><%= Boarding %></option>
+                                        <% } else { %>
+                                            <option value="" selected disabled>Select an option</option>
+                                        <% } %>
+                                    
                                     <option value="Nagano station">Nagano station</option>
                                     <option value="FujimiChu">FujimiChu</option>
                                     <option value="Matsumoto">Matsumoto</option>
@@ -64,7 +69,11 @@
                                       
                                     <label for="Getoff Bus Stop" class="form-label">降車バス停</label>
                                     <select id="Getoff_Bus_Stop" name="Getoff_Bus_Stop" class="form-select">
-                                    <option value="Zenkoji">Zenkoji</option>
+                                        <% if (typeof Getoff !== 'undefined' && Getoff) { %>
+                                            <option value="<%= Getoff %>"><%= Getoff %></option>
+                                        <% } else { %>
+                                            <option value="" selected disabled>Select an option</option>
+                                        <% } %>
                                     <option value="Nagano station">Nagano station</option>
                                     <option value="FujimiChu">FujimiChu</option>
                                     <option value="Matsumoto">Matsumoto</option>

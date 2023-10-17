@@ -3,8 +3,8 @@ const axios = require('axios');
 
 //For Line Login Code
 const line_login_redirect= (req, res) => {
-    const channelId = '2000133795'; // Replace with your actual channel ID
-    const clientSecret = '8b48b99c6e4e7aa063cdeca7097c4c7d'; // Replace with your actual channel secret
+    const channelId = '2001194332'; // Replace with your actual channel ID
+    const clientSecret = 'bfe3364dc425e55a38a6c39c1490c90b'; // Replace with your actual channel secret
     const redirectUri = 'http://localhost:3001/line/line2'; // Replace with your actual redirect URI
     const authorizationCode = req.query.code;
   
@@ -74,7 +74,7 @@ const line_login_redirect= (req, res) => {
 
   const line_login_direct_outside= (req, res) => {
     // Generate the LINE login URL and redirect the user to it
-    const channelId = '2000133795';  // Replace with your LINE channel ID
+    const channelId = '2001194332';  // Replace with your LINE channel ID
     const redirectUri = encodeURIComponent('http://localhost:3001/line/line2');
     const state = generateRandomState(10);  // You need to implement this function
   
