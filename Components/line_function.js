@@ -1,18 +1,17 @@
+require('dotenv').config();
 const axios = require('axios');
-
-
 //For Line Login Code
 const line_login_redirect= (req, res) => {
-    const channelId = '2001194332'; // Replace with your actual channel ID
-    const clientSecret = 'bfe3364dc425e55a38a6c39c1490c90b'; // Replace with your actual channel secret
-    const redirectUri = 'http://localhost:3001/line/line2'; // Replace with your actual redirect URI
+    const channelId = process.env.channelId; 
+    const clientSecret = process.env.clientSecret; 
+    const redirectUri = process.env.redirectUri; 
     const authorizationCode = req.query.code;
   
     if (!authorizationCode) {
       return res.send('Authorization code is missing.');
     }
   
-    // Exchange the authorization code for an access token
+
     const accessTokenUrl = 'https://api.line.me/oauth2/v2.1/token';
     const headers = {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -30,7 +29,7 @@ const line_login_redirect= (req, res) => {
       .then((response) => {
         const access_token = response.data.access_token;
   
-        // Make an API call to get the user's profile using the access token
+        
         const profile_url = 'https://api.line.me/v2/profile';
         const profile_headers = {
           Authorization: 'Bearer ' + access_token,
@@ -44,7 +43,7 @@ const line_login_redirect= (req, res) => {
             const user_picture = user_profile.pictureUrl;
             const user_id = user_profile.userId;
   
-            // Render the EJS view with user details
+        
             res.redirect(`/line/Line_Check?user_id=${user_id}&user_name=${user_name}`);
     })
 
@@ -73,14 +72,14 @@ const line_login_redirect= (req, res) => {
   }
 
   const line_login_direct_outside= (req, res) => {
-    // Generate the LINE login URL and redirect the user to it
-    const channelId = '2001194332';  // Replace with your LINE channel ID
-    const redirectUri = encodeURIComponent('http://localhost:3001/line/line2');
-    const state = generateRandomState(10);  // You need to implement this function
+ 
+    const channelId = process.env.channelId; 
+    const redirectUri = encodeURIComponent(process.env.redirectUri);
+    const state = generateRandomState(10);  
   
     const url = `https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=${channelId}&redirect_uri=${redirectUri}&scope=profile%20openid&state=${state}`;
   
-    // Redirect the user to the LINE authorization URL
+    
     res.redirect(url);
   }
 

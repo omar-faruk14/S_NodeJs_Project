@@ -31,23 +31,25 @@
             </nav>
 
             <!-- Page content-->
-            <section class="py-5">
-              <div class="container px-5">
+            <section class="py-3">
+              <div class="container px-0">
                   
-                  <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
-                      <div class="text-center mb-5">
+                  <div class="bg-light rounded-3 py-3 px-2 px-md-5 mb-5">
+                      <div class="text-center mb-2">
                           
                       </div>
-                      <div class="row gx-5 justify-content-center">
-                          <div class="col-lg-8 col-xl-6">
+                      <div class="row gx-3 justify-content-center">
+                          <div class="border rounded text-center col-lg-8 col-xl-6">
 
-                            <h5>ご返信いただきありがとうございます。</h5>
+                            <p><strong>日付: <%= displayDate %></strong></p> 
+                            <p><strong>時刻: <%= time %></strong></p> 
                             <p><strong>乗車バス停:</strong> <%= Boarding_Bus_Stop %></p>
                             <p><strong>降車バス停:</strong> <%= Getoff_Bus_Stop %></p>
                             <p><strong>利用者数：大人:</strong> <%= adults %></p>
                             <p><strong>子供:</strong> <%= child %></p>
-                            <p><strong>利用目的:</strong> <%= Purpose %></p>
-                            <p><strong>Date:</strong> <%= date %></p>                     
+                            <p><strong>利用目的:</strong> <%= Purpose %></p> <br>
+                             
+                            <p><b>ご利用ありがとうございました。</b></p>                   
                           </div>
                           </div>
                           </div>

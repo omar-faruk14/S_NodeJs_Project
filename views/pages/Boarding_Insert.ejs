@@ -18,7 +18,7 @@
         <main class="flex-shrink-0">
             <!-- Navigation-->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div class="container px-5">
+                <div class="container px-0">
                     <a class="navbar-brand" href="/line/line4">乗降ログ記録サービス</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -32,13 +32,13 @@
 
             <!-- Page content-->
             <section class="py-5">
-              <div class="container px-5">
+              <div class="container px-0">
                   
-                  <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
-                      <div class="text-center mb-5">
+                  <div class="bg-light rounded-3 py-5 px-0 px-md-5 mb-2">
+                      <div class="text-center mb-2">
                           <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
                           <h1 class="fw-bolder"></h1>
-                          <p class="lead fw-normal text-muted mb-0">We'd love to hear from you</p>
+                          
                       </div>
                       <div class="row gx-5 justify-content-center">
                           <div class="col-lg-8 col-xl-6">
@@ -48,7 +48,7 @@
                               <!-- Servey form-->
                               
                               <div class="container_1">
-                                <h1 align="center">乗降ログ記録サービス</h1>
+                                <h5 class="border text-center rounded-circle">乗降ログ記録サービス</h5>
                                 <form id="optionForm" action="/ticket_insert" method="POST">
                                   <div class="form-group">
                                     <label for="User_ID" class="form-label">LINE ID</label>
@@ -58,7 +58,7 @@
                                         <% if (typeof Boarding !== 'undefined' && Boarding) { %>
                                             <option value="<%= Boarding %>"><%= Boarding %></option>
                                         <% } else { %>
-                                            <option value="" selected disabled>Select an option</option>
+                                            <option value="" selected disabled>選択肢一つを選択してください。</option>
                                         <% } %>
                                     <option value="Zenkouji">Zenkouji</option>
                                     <option value="Nagano station">Nagano station</option>
@@ -72,7 +72,7 @@
                                         <% if (typeof Getoff !== 'undefined' && Getoff) { %>
                                             <option value="<%= Getoff %>"><%= Getoff %></option>
                                         <% } else { %>
-                                            <option value="" selected disabled>Select an option</option>
+                                            <option value="" selected disabled>選択肢一つを選択してください。</option>
                                         <% } %>
                                     
                                     <option value="Nagano station">Nagano station</option>
@@ -109,6 +109,11 @@
                                   
                                     <label for="Purpose" class="form-label">利用目的</label>
                                     <select id="Purpose" name="Purpose" class="form-select" required>
+                                    <% if (typeof Purpose !== 'undefined' && Purpose) { %>
+                                        <option value="<%= Purpose %>"><%= Purpose %></option>
+                                    <% } else { %>
+                                        <option value="" selected disabled>選択肢一つを選択してください。</option>
+                                    <% } %>
                                     <option value="学生">学生</option>
                                     <option value="会社員">会社員</option>
                                     <option value="公務員">公務員</option>
@@ -119,12 +124,12 @@
                                     <option value="その他">その他</option>
                                     </select>
                             </div>
-                                    <button type="submit" class="btn btn-primary text-center">おりる</button>
+                                    <button type="submit" class="btn btn-primary w-100">おりる</button>
                               
                                   </form>
                             </div>
 
-                            <p align="center" style="color: red;">降りる際にこのボタンを押して、表示される画面を運転手さんに提示してください</p>
+                            <p class="alert alert-info">降りる際にこのボタンを押して、表示される画面を運転手さんに提示してください</p>
                         
                           </div>
                           </div>
