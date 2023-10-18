@@ -53,45 +53,45 @@
                                     <form action="/line/signup" method="post">
                                         <div class="mb-3">
                                             <label for="User_ID" class="form-label">LINE ID</label>
-                                            <input type="text" value="<%= id %>" id="User_ID" name="User_ID" class="form-control" readonly style="background-color: #ccc; border: 1px solid #ccc; color: #000;" />
+                                            <input type="text" value="<%= id %>" id="User_ID" name="User_ID" class="form-control" readonly style="background-color: #ccc; border: 1px solid #ccc; color: #000;" required/>
                                         </div>
                                         <div class="mb-3">
                                             <label for="Display_Name" class="form-label">名前</label>
-                                            <input type="text" value="<%= name %>" id="Display_Name" name="Display_Name" class="form-control" />
+                                            <input type="text" value="<%= name %>" id="Display_Name" name="Display_Name" class="form-control" required/>
                                         </div>
 
                                     
 
                                         <div class="mb-3">
                                             <label for="Age" class="form-label">年齢</label>
-                                            <select class="form-select" id="Age" name="Age">
+                                            <select class="form-select" id="Age" name="Age" required>
                                                 <% for (let i = 18; i <= 64; i++) { %>
                                                   <option value="<%= i %>"><%= i %> 年</option>
                                                 <% } %>
                                               </select>
                                         </div>                                         
                                                  <label for="Gender" class="form-label">性別</label>
-                                                <select id="Gender" name="Gender" class="form-select">
+                                                <select id="Gender" name="Gender" class="form-select" required>
                                                 <!--<option selected>性別を選択してください。</option> -->
                                                 <option value="男">男</option>
                                                 <option value="女">女</option>
-                                                <option value="Others">Others</option>
+                                                <option value="その他">その他</option>
                                     
                                     </select>
             
                                         <div class="mb-3">
                                             <label for="Occupation" class="form-label">職業/学年</label>
-                                            <input type="text" id="Occupation" name="Occupation" class="form-control" />
+                                            <input type="text" id="Occupation" name="Occupation" class="form-control" required/>
                                         </div>
 
                                         <div class="mb-3">
                                             <label for="District_Name" class="form-label">住んでいる地区</label>
-                                            <input type="text" id="District_Name" name="District_Name" class="form-control" />
+                                            <input type="text" id="District_Name" name="District_Name" class="form-control" required/>
                                         </div>
 
                                         <div class="mb-3">
                                             <label for="Usually_Bus_Use" class="form-label">最寄りのバス停</label>
-                                            <input type="text" id="Usually_Bus_Use" name="Usually_Bus_Use" class="form-control" />
+                                            <input type="text" id="Usually_Bus_Use" name="Usually_Bus_Use" class="form-control" required/>
                                         </div>
                                         <div class="text-center">
                                             <button type="submit" class="btn btn-primary">Submit</button>

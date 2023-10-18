@@ -19,11 +19,11 @@
             <!-- Navigation-->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container px-5">
-                    <a class="navbar-brand" href="index.html">乗降ログ記録サービス</a>
+                    <a class="navbar-brand" href="/line/line4">乗降ログ記録サービス</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/line/line4">Home</a></li>
                             
                         </ul>
                     </div>
@@ -42,10 +42,12 @@
                           <div class="col-lg-8 col-xl-6">
 
                             <h5>ご返信いただきありがとうございます。</h5>
-
-
-                              
-                        
+                            <p><strong>乗車バス停:</strong> <%= Boarding_Bus_Stop %></p>
+                            <p><strong>降車バス停:</strong> <%= Getoff_Bus_Stop %></p>
+                            <p><strong>利用者数：大人:</strong> <%= adults %></p>
+                            <p><strong>子供:</strong> <%= child %></p>
+                            <p><strong>利用目的:</strong> <%= Purpose %></p>
+                            <p><strong>Date:</strong> <%= date %></p>                     
                           </div>
                           </div>
                           </div>

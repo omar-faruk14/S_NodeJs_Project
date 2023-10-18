@@ -52,15 +52,15 @@
                                 <form id="optionForm" action="/ticket_insert" method="POST">
                                   <div class="form-group">
                                     <label for="User_ID" class="form-label">LINE ID</label>
-                                    <input id="User_ID" name="User_ID" class="form-control" value="<%= User_ID %>" type="text" readonly style="background-color: #ccc; border: 1px solid #ccc; color: #000;" />
+                                    <input id="User_ID" name="User_ID" class="form-control" value="<%= User_ID %>" type="text" readonly style="background-color: #ccc; border: 1px solid #ccc; color: #000;"  required/>
                                     <label for="Boarding Bus Stop" >乗車バス停</label>
-                                    <select id="Boarding_Bus_Stop" name="Boarding_Bus_Stop" class="form-select">
+                                    <select id="Boarding_Bus_Stop" name="Boarding_Bus_Stop" class="form-select" required>
                                         <% if (typeof Boarding !== 'undefined' && Boarding) { %>
                                             <option value="<%= Boarding %>"><%= Boarding %></option>
                                         <% } else { %>
                                             <option value="" selected disabled>Select an option</option>
                                         <% } %>
-                                    
+                                    <option value="Zenkouji">Zenkouji</option>
                                     <option value="Nagano station">Nagano station</option>
                                     <option value="FujimiChu">FujimiChu</option>
                                     <option value="Matsumoto">Matsumoto</option>
@@ -68,13 +68,15 @@
                                     </select>
                                       
                                     <label for="Getoff Bus Stop" class="form-label">降車バス停</label>
-                                    <select id="Getoff_Bus_Stop" name="Getoff_Bus_Stop" class="form-select">
+                                    <select id="Getoff_Bus_Stop" name="Getoff_Bus_Stop" class="form-select" required>
                                         <% if (typeof Getoff !== 'undefined' && Getoff) { %>
                                             <option value="<%= Getoff %>"><%= Getoff %></option>
                                         <% } else { %>
                                             <option value="" selected disabled>Select an option</option>
                                         <% } %>
+                                    
                                     <option value="Nagano station">Nagano station</option>
+                                    <option value="Zenkouji">Zenkouji</option>
                                     <option value="FujimiChu">FujimiChu</option>
                                     <option value="Matsumoto">Matsumoto</option>
                                     
@@ -82,27 +84,39 @@
                                   
                                   
                                     <label for="adults" class="form-label">利用者数：大人</label>
-                                    <select id="adults" name="adults" class="form-select">
-                                        <option value="0">-</option>
+                                    <select id="adults" name="adults" class="form-select" required>                                   
+                                     <option value="0">-</option>
                                     <option value="1">1人</option>
                                     <option value="2">2人</option>
                                     <option value="3">3人</option>
-                                    
+                                    <option value="4">4人</option>
+                                    <option value="5">5人</option>
+                                    <option value="6">6人</option>
+                                    <option value="7">7人</option>                                   
                                     </select>
                             
                                     <label for="child" class="form-label">子供</label>
-                                    <select id="child" name="child" class="form-select">
+                                    <select id="child" name="child" class="form-select" required>
                                     <option value="0">-</option>
                                     <option value="1">1人</option>
                                     <option value="2">2人</option>
                                     <option value="3">3人</option>
+                                    <option value="4">4人</option>
+                                    <option value="5">5人</option>
+                                    <option value="6">6人</option>
+                                    <option value="7">7人</option>
                                     </select>
                                   
                                     <label for="Purpose" class="form-label">利用目的</label>
-                                    <select id="Purpose" name="Purpose" class="form-select">
-                                    <option value="Visit">Visit</option>
-                                    <option value="Work">Work</option>
-                                    <option value="Study">Study</option>
+                                    <select id="Purpose" name="Purpose" class="form-select" required>
+                                    <option value="学生">学生</option>
+                                    <option value="会社員">会社員</option>
+                                    <option value="公務員">公務員</option>
+                                    <option value="個人事業">個人事業</option>
+                                    <option value="自由業">自由業</option>
+                                    <option value="専業主婦・主夫">専業主婦・主夫</option>
+                                    <option value="アルバイト/パート">アルバイト/パート</option>
+                                    <option value="その他">その他</option>
                                     </select>
                             </div>
                                     <button type="submit" class="btn btn-primary text-center">おりる</button>
