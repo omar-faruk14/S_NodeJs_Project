@@ -58,7 +58,7 @@
                                         <% if (typeof Boarding !== 'undefined' && Boarding) { %>
                                             <option value="<%= Boarding %>"><%= Boarding %></option>
                                         <% } else { %>
-                                            <option value="" selected disabled>選択肢一つを選択してください。</option>
+                                            <option value="" selected disabled>選択してください。</option>
                                         <% } %>
                                     <option value="Zenkouji">Zenkouji</option>
                                     <option value="Nagano station">Nagano station</option>
@@ -72,7 +72,7 @@
                                         <% if (typeof Getoff !== 'undefined' && Getoff) { %>
                                             <option value="<%= Getoff %>"><%= Getoff %></option>
                                         <% } else { %>
-                                            <option value="" selected disabled>選択肢一つを選択してください。</option>
+                                            <option value="" selected disabled>選択してください。</option>
                                         <% } %>
                                     
                                     <option value="Nagano station">Nagano station</option>
@@ -112,15 +112,12 @@
                                     <% if (typeof Purpose !== 'undefined' && Purpose) { %>
                                         <option value="<%= Purpose %>"><%= Purpose %></option>
                                     <% } else { %>
-                                        <option value="" selected disabled>選択肢一つを選択してください。</option>
+                                        <option value="" selected disabled>選択してください。</option>
                                     <% } %>
-                                    <option value="学生">学生</option>
-                                    <option value="会社員">会社員</option>
-                                    <option value="公務員">公務員</option>
-                                    <option value="個人事業">個人事業</option>
-                                    <option value="自由業">自由業</option>
-                                    <option value="専業主婦・主夫">専業主婦・主夫</option>
-                                    <option value="アルバイト/パート">アルバイト/パート</option>
+                                    <option value="仕事">仕事</option>
+                                    <option value="学校">学校</option>
+                                    <option value="病院">病院</option>
+                                    <option value="買い物">買い物</option>
                                     <option value="その他">その他</option>
                                     </select>
                             </div>
